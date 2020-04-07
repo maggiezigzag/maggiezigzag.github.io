@@ -59,7 +59,7 @@ a {
 }
 
 .label {
-  width: 18%;
+  width: 15%;
   display: inline-block;
   text-align: center;
 }
@@ -120,6 +120,11 @@ a {
   </div>
 </div>
 
+<div class='session' id='sliderbar'>
+  <h2>Date: <label id='active-date'>01/02/1965</label></h2>
+  <input id='slider' class='row' type='range' min='01/02/1965' max='12/30/2016' step='1' value='01/02/1965' />
+</div>
+
 </div>
 
 <script>
@@ -160,6 +165,7 @@ map.on('load', function() {
       ],
       'circle-opacity': 0.8
     }
+    // filter: ['==', ['number', ['get', 'Date']], 12]
   });
 });
 
