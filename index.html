@@ -122,8 +122,8 @@ a {
 </div>
 
 <div class='session' id='sliderbar'>
-  <h2>Date: <label id='Date'>01/02/1965</label></h2>
-  <input id='slider' class='row' type='range' min='0' max='23412' step='1' value='0' />
+  <h2>Date: <label id='Date'>January</label></h2>
+  <input id='slider' class='row' type='range' min='0' max='52' step='1' value='0' />
 </div>
 
 </div>
@@ -139,6 +139,31 @@ var map = new mapboxgl.Map({
   center: [-74.0059, 40.7128], // initial map center in [lon, lat]
   zoom: 2
 });
+
+
+var months = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December'
+];
+ 
+function filterBy(month) {
+	var filters = ['==', 'month', Date];
+	map.setFilter('earthquakes', filters);
+	map.setFilter('earthquake-labels', filters);
+	 
+	// Set the label to the month
+	document.getElementById('Date').textContent = months[Date];
+}
 
 map.on('load', function() {
   map.addLayer({
@@ -170,18 +195,49 @@ map.on('load', function() {
     }
     // filter: ['==', ['number', ['get', 'Date']], '01/02/1965']
   });
-  document.getElementById('slider').addEventListener('input', function(e) {
-  var date = parseInt(e.target.value);
-  // update the map
-  map.setFilter('Date', ['==', ['number', ['get', 'Date']], date]);
 
-  // converting 0-23 hour to AMPM format
-  // var ampm = date >= 12 ? 'PM' : 'AM';
-  // var hour12 = date % 12 ? date % 12 : 12;
-
-  // update text in the UI
-  document.getElementById('Date').innerText = date;
+  map.addLayer({
+	'id': 'earthquake-labels',
+	'type': 'symbol',
+	'source': 'earthquakes',
+	'layout': {
+	'text-field': [
+	'concat',
+	['to-string', ['get', 'Magnitude']],
+	'm'
+	],
+	'text-font': [
+	'Open Sans Bold',
+	'Arial Unicode MS Bold'
+	],
+	'text-size': 12
+	},
+	'paint': {
+	'text-color': 'rgba(0,0,0,0.5)'
+	}
 });
+
+  filterBy(0);
+
+	document
+	.getElementById('slider')
+	.addEventListener('input', function(e) {
+	var month = parseInt(e.target.value, 10);
+	filterBy(month);
+	});
+
+//   document.getElementById('slider').addEventListener('input', function(e) {
+//   var date = parseInt(e.target.value);
+//   // update the map
+//   map.setFilter('Date', ['==', ['number', ['get', 'Date']], date]);
+
+//   // converting 0-23 hour to AMPM format
+//   // var ampm = date >= 12 ? 'PM' : 'AM';
+//   // var hour12 = date % 12 ? date % 12 : 12;
+
+//   // update text in the UI
+//   document.getElementById('Date').innerText = date;
+// });
 });
 
 </script>
