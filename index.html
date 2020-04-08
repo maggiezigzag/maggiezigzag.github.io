@@ -121,10 +121,10 @@ a {
   </div>
 </div>
 
-<div class='session' id='sliderbar'>
+<!-- <div class='session' id='sliderbar'>
   <h2>Date: <label id='Date'>01/02/1965</label></h2>
   <input id='slider' class='row' type='range' min='0' max='23412' step='1' value='0' />
-</div>
+</div> -->
 
 </div>
 
@@ -168,19 +168,19 @@ map.on('load', function() {
       ],
       'circle-opacity': 0.8
     }
-    // filter: ['==', ['number', ['get', 'Date']], 12]
+    filter: ['==', ['number', ['get', 'Date']], '01/02/1965']
   });
-  document.getElementById('slider').addEventListener('input', function(e) {
-  var date = parseInt(e.target.value);
-  // update the map
-  map.setFilter('Date', ['==', ['number', ['get', 'Date']], date]);
+  // document.getElementById('slider').addEventListener('input', function(e) {
+  // var date = parseInt(e.target.value);
+  // // update the map
+  // map.setFilter('Date', ['==', ['number', ['get', 'Date']], date]);
 
-  // converting 0-23 hour to AMPM format
-  // var ampm = date >= 12 ? 'PM' : 'AM';
-  // var hour12 = date % 12 ? date % 12 : 12;
+  // // converting 0-23 hour to AMPM format
+  // // var ampm = date >= 12 ? 'PM' : 'AM';
+  // // var hour12 = date % 12 ? date % 12 : 12;
 
-  // update text in the UI
-  document.getElementById('active-date').innerText = date;
+  // // update text in the UI
+  // document.getElementById('active-date').innerText = date;
 });
 });
 
