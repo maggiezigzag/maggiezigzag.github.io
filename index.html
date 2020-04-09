@@ -44,45 +44,25 @@ a {
   background-color: white;
 }
 
-/*.session {
-  margin-bottom: 20px;
-}
+	.session {
+	  margin-bottom: 20px;
+	}
 
-.row {
-  height: 12px;
-  width: 100%;
-}
+	.row {
+	  height: 12px;
+	  width: 100%;
+	}
 
-.colors {
-  background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
-  margin-bottom: 5px;
-}
+	.colors {
+	  background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
+	  margin-bottom: 5px;
+	}
 
-.label {
-  width: 15%;
-  display: inline-block;
-  text-align: center;
-}*/
-
-.session {
-  margin-bottom: 20px;
-}
-
-.row {
-  height: 12px;
-  width: 100%;
-}
-
-.colors {
-  background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
-  margin-bottom: 5px;
-}
-
-.label {
-  width: 15%;
-  display: inline-block;
-  text-align: center;
-}
+	.label {
+	  width: 15%;
+	  display: inline-block;
+	  text-align: center;
+	}
 
 </style>
 </head>
@@ -93,21 +73,7 @@ a {
   <h1>Significant Earthquakes, 1965-2016</h1>
   <p>Data: <a href='https://www.kaggle.com/usgs/earthquake-database'>Date, time, and location of all earthquakes with magnitude of 5.5 or higher</a> 1965-2016</p>
 
-<!--   <div class='session'>
-  <h2>Magnitude</h2>
-  <div class='row colors'>
-  </div>
-  <div class='row labels'>
-    <div class='label'>5.5</div>
-    <div class='label'>6.0</div>
-    <div class='label'>7.0</div>
-    <div class='label'>8.0</div>
-    <div class='label'>9.0</div>
-    <div class='label'>10.0+</div>
-  </div>
-</div> -->
-
-<div class='session'>
+  <div class='session'>
   <h2>Depth</h2>
   <div class='row colors'>
   </div>
@@ -121,10 +87,10 @@ a {
   </div>
 </div>
 
-<div class='session' id='sliderbar'>
+<!-- <div class='session' id='sliderbar'>
   <h2>Date: <label id='Date'>January</label></h2>
   <input id='slider' class='row' type='range' min='0' max='52' step='1' value='0' />
-</div>
+</div> -->
 
 </div>
 
@@ -197,8 +163,7 @@ map.on('load', function() {
       ],
       'circle-opacity': 0.4
     }
-    // filter: ['==', ['number', ['get', 'Date']], '01/02/1965']
-  });
+  	});
 
   map.addLayer({
 	'id': 'earthquake-labels',
@@ -219,29 +184,8 @@ map.on('load', function() {
 	'paint': {
 	'text-color': 'rgba(0,0,0,0.5)'
 	}
-});
-
-  filterBy(0);
-
-	document
-	.getElementById('slider')
-	.addEventListener('input', function(e) {
-	var month = parseInt(e.target.value, 10);
-	filterBy(month);
-	});
-
-//   document.getElementById('slider').addEventListener('input', function(e) {
-//   var date = parseInt(e.target.value);
-//   // update the map
-//   map.setFilter('Date', ['==', ['number', ['get', 'Date']], date]);
-
-//   // converting 0-23 hour to AMPM format
-//   // var ampm = date >= 12 ? 'PM' : 'AM';
-//   // var hour12 = date % 12 ? date % 12 : 12;
-
-//   // update text in the UI
-//   document.getElementById('Date').innerText = date;
-// });
+	
+  });
 });
 
 </script>
