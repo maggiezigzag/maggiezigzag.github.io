@@ -44,7 +44,7 @@ a {
   background-color: white;
 }
 
-.session {
+/*.session {
   margin-bottom: 20px;
 }
 
@@ -62,7 +62,7 @@ a {
   width: 15%;
   display: inline-block;
   text-align: center;
-}
+}*/
 
 .session {
   margin-bottom: 20px;
@@ -93,7 +93,7 @@ a {
   <h1>Significant Earthquakes, 1965-2016</h1>
   <p>Data: <a href='https://www.kaggle.com/usgs/earthquake-database'>Date, time, and location of all earthquakes with magnitude of 5.5 or higher</a> 1965-2016</p>
 
-  <div class='session'>
+<!--   <div class='session'>
   <h2>Magnitude</h2>
   <div class='row colors'>
   </div>
@@ -105,7 +105,7 @@ a {
     <div class='label'>9.0</div>
     <div class='label'>10.0+</div>
   </div>
-</div>
+</div> -->
 
 <div class='session'>
   <h2>Depth</h2>
@@ -156,8 +156,8 @@ var months = [
 	'December'
 ];
  
-function filterBy(month) {
-	var filters = ['==', 'month', Date];
+function filterBy(Date) {
+	var filters = ['==', 'Date', Date];
 	map.setFilter('earthquakes', filters);
 	map.setFilter('earthquake-labels', filters);
 	 
