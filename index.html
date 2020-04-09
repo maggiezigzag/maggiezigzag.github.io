@@ -177,19 +177,23 @@ map.on('load', function() {
       'circle-radius': [
         'interpolate',
         ['linear'],
-        ['number', ['get', 'Depth']],
-        -1.1, 4,
-        700, 50
+        ['number', ['get', 'Magnitude']],
+        5.5, 1,
+        6.5, 10,
+        7.5, 100,
+        8.5, 1000,
+        9.5, 10000,
       ],
       'circle-color': [
         'interpolate',
         ['linear'],
-        ['number', ['get', 'Magnitude']],
-        5.5, '#2DC4B2',
-        6.0, '#3BB3C3',
-        7.0, '#669EC4',
-        8.0, '#8B88B6',
-        9.1, '#A2719B',
+        ['number', ['get', 'Depth']],
+        0, '#2DC4B2',
+        150, '#3BB3C3',
+        300, '#669EC4',
+        450, '#8B88B6',
+        600, '#A2719B',
+        750, '#AA5E79',
       ],
       'circle-opacity': 0.4
     }
