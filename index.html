@@ -142,9 +142,9 @@ map.on('load', function() {
     paint: {
       'circle-radius': [
         'interpolate',
-        ['logarithmic'],
+        ['exponential', 10],
         ['number', ['get', 'Magnitude']],
-        5.5, 1,
+        5.5, 10,
         9.5, 100,
       ],
       'circle-color': [
