@@ -439,8 +439,19 @@ map.on('load', function() {
 	'paint': {
 	'text-color': 'rgba(0,0,0,0.5)'
 	}
-	
+
   });
+
+  d3.json('./earthquakes.geojson',
+  	function(err, data){
+  		if (err) throw err;
+
+  		data.features = data.features.map(function(d)){
+  			d.properties.month = new Date(d.properties.Date).getMonth();
+  			return d;
+  		}
+  	})
+
 });
 
 </script>
