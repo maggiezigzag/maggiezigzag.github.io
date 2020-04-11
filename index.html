@@ -450,8 +450,8 @@ map.on('load', function() {
   		if (err) throw err;
 
   		data.features = data.features.map(function(d){
-  			d.properties.month = new Date(d.properties.Date).getMonth();
-  			console.log(Date(d.properties.Date).getYear());
+  			d.properties.year = new Date(d.properties.Date).getYear();
+  			console.log(d.properties.year);
   			return d;
   		});
   	})
