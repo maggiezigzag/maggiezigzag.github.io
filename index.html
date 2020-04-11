@@ -378,14 +378,14 @@ var years = [
 ];
  
 function filterBy(Date) {
-	console.log(typeof Date);
-	date = Date.to-string();
-	var filters = ['==', 'Date', Date];
+	Year = Date+65
+	var filters = ['==', 'Date', Year];
+	console.log(filters)
 	map.setFilter('earthquakes', filters);
 	map.setFilter('earthquake-labels', filters);
 	 
 	// Set the label to the month
-	document.getElementById('Date').textContent = years[Date];
+	document.getElementById('Date').textContent = years[Year];
 }
 
 map.on('load', function() {
