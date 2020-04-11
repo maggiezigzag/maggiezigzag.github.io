@@ -133,6 +133,10 @@ label {
     	font-family: Helvetica;
 	}
 
+	.u-altTextColor {
+	    color: #979ea1;
+	}
+
 	.Bubble-numbersItem {
 	    display: inline-block;
 	    padding-right: 5px;
@@ -162,6 +166,36 @@ label {
 	    background: #1f9e89;
 	    box-shadow: -1px 0 2px 0 rgba(0,0,0,.1);
 	    pointer-events: none;
+	}
+
+	.Bubble-average {
+	    -webkit-transform: translateY(50%);
+	    -khtml-transform: translateY(50%);
+	    -moz-transform: translateY(50%);
+	    -ms-transform: translateY(50%);
+	    -o-transform: translateY(50%);
+	    transform: translateY(50%);
+	    display: block;
+	    position: absolute;
+	    right: 102px;
+	    white-space: nowrap;
+	    z-index: 1000;
+	}
+
+	.Bubble-average:before {
+	    top: calc(50% - 1px);
+	    width: 3px;
+	    height: 3px;
+	    border-radius: 50%;
+	    background: rgba(0,0,0,.4);
+	}
+
+	.Bubble-average:after, .Bubble-average:before {
+	    display: block;
+	    position: absolute;
+	    right: -54px;
+	    content: "";
+	    z-index: 10;
 	}
 
 	.map-overlay .map-overlay-inner {
