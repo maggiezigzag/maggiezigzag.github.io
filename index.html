@@ -451,7 +451,6 @@ map.on('load', function() {
 
   		data.features = data.features.map(function(d){
   			d.properties.year = new Date(d.properties.Date).getYear();
-  			console.log(d);
   			return d;
   		});
   	})
