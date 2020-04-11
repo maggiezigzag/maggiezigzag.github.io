@@ -321,63 +321,7 @@ var map = new mapboxgl.Map({
   zoom: 2
 });
 
-map.on('load', function() {
-  map.addLayer({
-    id: 'earthquakes',
-    type: 'circle',
-    source: {
-      type: 'geojson',
-      data: './earthquakes.geojson' // replace this with the url of your own geojson
-    },
-    paint: {
-      'circle-radius': [
-        'interpolate',
-        ['linear'],
-        ['number', ['get', 'Magnitude']],
-        5.5, 10,
-        6.5, 20,
-        7.5, 30,
-        8.5, 40,
-        9.5, 50,
-      ],
-      'circle-color': [
-        'interpolate',
-        ['linear'],
-        ['number', ['get', 'Depth']],
-        0, '#1f9e89',
-        150, '#26828e',
-        300, '#31678e',
-        450, '#3e4a89',
-        600, '#482878',
-        750, '#430154',
-      ],
-      'circle-opacity': 0.2
-    }
-  	});
-
-  map.addLayer({
-	'id': 'earthquake-labels',
-	'type': 'symbol',
-	'source': 'earthquakes',
-	'layout': {
-	'text-field': [
-	'concat',
-	['to-string', ['get', 'Magnitude']],
-	'm'
-	],
-	'text-font': [
-	'Open Sans Bold',
-	'Arial Unicode MS Bold'
-	],
-	'text-size': 12
-	},
-	'paint': {
-	'text-color': 'rgba(0,0,0,0.5)'
-	}
-
-  });
-
-  var years = [
+var years = [
 	'1965',
 	'1966',
 	'1967',
@@ -436,30 +380,88 @@ function filterBy(year) {
   		yeari = year+65
 		var filters = ['==', 'Date', year+65];
 		map.setFilter('earthquakes', filters);
+		console.log(map.setFilter('earthquakes',filters));
 		map.setFilter('earthquake-labels', filters);
 	 
 		// Set the label to the year
-		// console.log(document.getElementById(d.properties));
 		document.getElementById('year').textContent = years[year];
- }
+}
 
-  d3.json('./earthquakes.geojson',
-  	function(err, data){
-  		if (err) throw err;
-  		data.features = data.features.map(function(d){
-  			d.properties.year = new Date(d.properties.Date).getYear();
-  			//console.log(d.properties.year);
-  			return d;
-  		});
-  	})
-  filterBy(0);
+map.on('load', function() {
 
-  document
-	.getElementById('slider')
-	.addEventListener('input', function(e) {
-		var year = parseInt(e.target.value, 10);
-		console.log(year)
-		filterBy(year);
+	d3.json('./earthquakes.geojson',
+		function(err, data){
+			if (err) throw err;
+			data.features = data.features.map(function(d){
+				d.properties.year = new Date(d.properties.Date).getYear();
+				//console.log(d.properties.year);
+				return d;
+			});
+		})
+	map.addSource('earthquakes',{
+		'type':'geojson',
+		data: data
+	});
+
+    map.addLayer({
+	    id: 'earthquakes',
+	    type: 'circle',
+	    source: 'earthquakes',
+	    paint: {
+	      'circle-radius': [
+	        'interpolate',
+	        ['linear'],
+	        ['number', ['get', 'Magnitude']],
+	        5.5, 10,
+	        6.5, 20,
+	        7.5, 30,
+	        8.5, 40,
+	        9.5, 50,
+	      ],
+	      'circle-color': [
+	        'interpolate',
+	        ['linear'],
+	        ['number', ['get', 'Depth']],
+	        0, '#1f9e89',
+	        150, '#26828e',
+	        300, '#31678e',
+	        450, '#3e4a89',
+	        600, '#482878',
+	        750, '#430154',
+	      ],
+	      'circle-opacity': 0.2
+	    }
+	  	});
+
+    map.addLayer({
+		'id': 'earthquake-labels',
+		'type': 'symbol',
+		'source': 'earthquakes',
+		'layout': {
+		'text-field': [
+		'concat',
+		['to-string', ['get', 'Magnitude']],
+		'm'
+		],
+		'text-font': [
+		'Open Sans Bold',
+		'Arial Unicode MS Bold'
+		],
+		'text-size': 12
+		},
+		'paint': {
+		'text-color': 'rgba(0,0,0,0.5)'
+		}
+  	});
+  	filterBy(0);
+
+
+    document
+		.getElementById('slider')
+		.addEventListener('input', function(e) {
+			var year = parseInt(e.target.value, 10);
+			console.log(year)
+			filterBy(year);
 	});
 
 });
