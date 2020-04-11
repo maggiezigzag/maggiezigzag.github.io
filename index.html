@@ -437,11 +437,15 @@ function filterBy(year) {
 	d3.json('./earthquakes.geojson',
   	function(err, data){
   		if (err) throw err;
+  		  		console.log("got here");
 
   		data.features = data.features.map(function(d){
   			d.properties.year = new Date(d.properties.Date).getYear();
   			return d;
-  		console.log("got here");
+
+
+
+
   		yeari = year+65
 		var filters = ['==', d.properties.year, year+65];
 		console.log(filters)
