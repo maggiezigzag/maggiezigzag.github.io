@@ -433,18 +433,8 @@ map.on('load', function() {
 ];
 
 function filterBy(year) {
-	yeari = year+65
-	var filters = ['==', 'Date', year+65];
-	console.log(filters)
-	map.setFilter('earthquakes', filters);
-	map.setFilter('earthquake-labels', filters);
-	 
-	// Set the label to the year
-	console.log(document.getElementById(d.properties));
-	document.getElementById('Date').textContent = years[year];
-}
 
-  d3.json('./earthquakes.geojson',
+	d3.json('./earthquakes.geojson',
   	function(err, data){
   		if (err) throw err;
 
@@ -454,6 +444,28 @@ function filterBy(year) {
   			return d;
   		});
   	})
+  	
+	yeari = year+65
+	var filters = ['==', d.properties.year, year+65];
+	console.log(filters)
+	map.setFilter('earthquakes', filters);
+	map.setFilter('earthquake-labels', filters);
+	 
+	// Set the label to the year
+	console.log(document.getElementById(d.properties));
+	document.getElementById('Date').textContent = years[year];
+}
+
+  // d3.json('./earthquakes.geojson',
+  // 	function(err, data){
+  // 		if (err) throw err;
+
+  // 		data.features = data.features.map(function(d){
+  // 			d.properties.year = new Date(d.properties.Date).getYear();
+  // 			//console.log(d.properties.year);
+  // 			return d;
+  // 		});
+  // 	})
   // filterBy(0);
 
   document
