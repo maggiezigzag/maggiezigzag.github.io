@@ -298,7 +298,7 @@ label {
 <!-- 	<div class="map-overlay">
  -->	<div class="session" id="sliderbar">
 			<h2>Earthquakes by Date</h2>
-			<label id = 'month'>1965</label>
+			<label id = 'year'>1965</label>
 			<input id = "slider" type="range" min="0" max="51" step="1" value="0">
 		</div>
 <!-- 	</div>
@@ -432,16 +432,16 @@ map.on('load', function() {
 	'2016'
 ];
 
-function filterBy(Date) {
-	Year = Date+65
-	var filters = ['==', 'Date', Year];
+function filterBy(year) {
+	yeari = year+65
+	var filters = ['==', 'Date', year+65];
 	console.log(filters)
 	map.setFilter('earthquakes', filters);
 	map.setFilter('earthquake-labels', filters);
 	 
 	// Set the label to the year
-	console.log(years[Date]);
-	document.getElementById('Date').textContent = years[Date];
+	console.log(years[year]);
+	document.getElementById('Date').textContent = years[year];
 }
 
   d3.json('./earthquakes.geojson',
@@ -450,7 +450,7 @@ function filterBy(Date) {
 
   		data.features = data.features.map(function(d){
   			d.properties.year = new Date(d.properties.Date).getYear();
-  			console.log(d.properties.year);
+  			//console.log(d.properties.year);
   			return d;
   		});
   	})
