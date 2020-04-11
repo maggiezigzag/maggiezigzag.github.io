@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta charset='utf-8' />
-<title>Earthquakes greater than 5.5 magnitude from 1972 - 2016</title>
+<title>Significant Earthquakes, 1965-2016</title>
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
@@ -58,7 +58,7 @@ label {
 	}
 
 	.colors {
-	  background: linear-gradient(to right, #f1eef6, #d4b9da, #c994c7, #df65b0, #dd1c77, #980043);
+	  background: linear-gradient(to right, #1f9e89, #26828e, #31678e, #3e4a89, #482878, #430154);
 	  margin-bottom: 5px;
 	}
 
@@ -214,7 +214,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">9.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:100%; width:100%; opacity:1; background color:#980043">
+						<span class="Bubble-itemCircle" style="height:100%; width:100%; opacity:1; background color:#1f9e89">
 						</span>
 					</div>
 				</li>
@@ -223,7 +223,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">8.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:79%; width:79%; opacity:1; background color:#980043"></span>
+						<span class="Bubble-itemCircle" style="height:79%; width:79%; opacity:1; background color:#1f9e89"></span>
 					</div>
 				</li>
 				<li class = "Bubble-item">
@@ -231,7 +231,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">7.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:59%; width:59%; opacity:1; background color:#980043"></span>
+						<span class="Bubble-itemCircle" style="height:59%; width:59%; opacity:1; background color:#1f9e89"></span>
 					</div>
 				</li>
 				<li class = "Bubble-item">
@@ -239,7 +239,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">6.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:39%; width:39%; opacity:1; background color:#980043"></span>
+						<span class="Bubble-itemCircle" style="height:39%; width:39%; opacity:1; background color:#1f9e89"></span>
 					</div>
 				</li>
 				<li class = "Bubble-item">
@@ -247,7 +247,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">5.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:19%; width:19%; opacity:1; background color:#980043"></span>
+						<span class="Bubble-itemCircle" style="height:19%; width:19%; opacity:1; background color:#1f9e89"></span>
 					</div>
 				</li>
 			</ul>
@@ -367,12 +367,12 @@ map.on('load', function() {
         'interpolate',
         ['linear'],
         ['number', ['get', 'Depth']],
-        0, '#f1eef6',
-        150, '#d4b9da',
-        300, '#c994c7',
-        450, '#df65b0',
-        600, '#dd1c77',
-        750, '#980043',
+        0, '#1f9e89',
+        150, '#26828e',
+        300, '#31678e',
+        450, '#3e4a89',
+        600, '#482878',
+        750, '#430154',
       ],
       'circle-opacity': 0.3
     }
