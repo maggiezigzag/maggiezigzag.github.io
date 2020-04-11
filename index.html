@@ -437,8 +437,6 @@ function filterBy(year) {
 	d3.json('./earthquakes.geojson',
   	function(err, data){
   		if (err) throw err;
-  		  		console.log("got here");
-
   		data.features = data.features.map(function(d){
   			d.properties.year = new Date(d.properties.Date).getYear();
   			return d;
@@ -454,7 +452,7 @@ function filterBy(year) {
 	 
 		// Set the label to the year
 		console.log(document.getElementById(d.properties));
-		document.getElementById('Date').textContent = years[year];
+		document.getElementById('year').textContent = years[year];
 
   		});
   	})
