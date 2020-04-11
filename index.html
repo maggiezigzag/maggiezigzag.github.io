@@ -298,7 +298,7 @@ label {
 <!-- 	<div class="map-overlay">
  -->	<div class="session" id="sliderbar">
 			<h2>Earthquakes by Date</h2>
-			<label id = 'month'>January</label>
+			<label id = 'month'>1965</label>
 			<input id = "slider" type="range" min="0" max="52" step="1" value="0">
 		</div>
 <!-- 	</div>
@@ -433,7 +433,7 @@ map.on('load', function() {
 ];
 
 function filterBy(Date) {
-	Year = Date+65
+	Year = Date-65
 	var filters = ['==', 'Date', Year];
 	console.log(filters)
 	map.setFilter('earthquakes', filters);
@@ -453,14 +453,14 @@ function filterBy(Date) {
   			return d;
   		});
   	})
-  filterBy(0);
+  // filterBy(0);
 
   document
 	.getElementById('slider')
 	.addEventListener('input', function(e) {
-		var month = parseInt(e.target.value, 10);
-		console.log(month)
-		filterBy(month);
+		var year = parseInt(e.target.value, 10);
+		console.log(year)
+		filterBy(year);
 	});
 
 });
