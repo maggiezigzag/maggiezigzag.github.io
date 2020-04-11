@@ -299,7 +299,7 @@ label {
  -->	<div class="session" id="sliderbar">
 			<h2>Earthquakes by Date</h2>
 			<label id = 'month'>1965</label>
-			<input id = "slider" type="range" min="0" max="52" step="1" value="0">
+			<input id = "slider" type="range" min="0" max="51" step="1" value="0">
 		</div>
 <!-- 	</div>
  --><!-- <div class='session' id='sliderbar'>
@@ -439,7 +439,7 @@ function filterBy(Date) {
 	map.setFilter('earthquakes', filters);
 	map.setFilter('earthquake-labels', filters);
 	 
-	// Set the label to the month
+	// Set the label to the year
 	console.log(years[Date]);
 	document.getElementById('Date').textContent = years[Date];
 }
@@ -450,6 +450,7 @@ function filterBy(Date) {
 
   		data.features = data.features.map(function(d){
   			d.properties.year = new Date(d.properties.Date).getYear();
+  			console.log(d.properties.year);
   			return d;
   		});
   	})
