@@ -440,9 +440,8 @@ function filterBy(year) {
 
   		data.features = data.features.map(function(d){
   			d.properties.year = new Date(d.properties.Date).getYear();
-  			//console.log(d.properties.year);
   			return d;
-  		
+  		console.log("got here");
   		yeari = year+65
 		var filters = ['==', d.properties.year, year+65];
 		console.log(filters)
