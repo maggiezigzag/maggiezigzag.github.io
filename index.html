@@ -189,7 +189,7 @@ a {
 		<div class ="Bubble-container">
 			<ul class="Bubble-list">
 				<li class="Bubble-item">
-					<div class="Bubble-label CDB-Text CDB-Size-small" style="height: 100%">
+					<div class="Bubble-label CDB-Text CDB-Size-small" style="height: 120%">
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">9.5</div>
 					</div>
 					<div class = "Bubble-circle">
@@ -288,7 +288,7 @@ map.on('load', function() {
     paint: {
       'circle-radius': [
         'interpolate',
-        ['exponential', 1],
+        ['exponential', 5],
         ['number', ['get', 'Magnitude']],
         5.5, 5,
         9.5, 75,
