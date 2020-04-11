@@ -387,9 +387,9 @@ var years = [
 
 function filterBy(year) {
   		yeari = year+65
-		// var filters = ['==', 'Date', year+65];
-		// map.setFilter('earthquakes', filters);
-		// map.setFilter('earthquake-labels', filters);
+		var filters = ['==', 'year', year+65];
+		map.setFilter('earthquakes', filters);
+		map.setFilter('earthquake-labels', filters);
 	 
 		// Set the label to the year
 		document.getElementById('year').textContent = years[year];
