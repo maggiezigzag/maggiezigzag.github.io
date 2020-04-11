@@ -394,10 +394,8 @@ map.on('load', function() {
 			if (err) throw err;
 			data.features = data.features.map(function(d){
 				d.properties.year = new Date(d.properties.Date).getYear();
-				//console.log(d.properties.year);
 				return d;
 			});
-		})
 	map.addSource('earthquakes',{
 		'type':'geojson',
 		data: data
@@ -463,6 +461,8 @@ map.on('load', function() {
 			console.log(year)
 			filterBy(year);
 	});
+	}
+	);
 
 });
 
