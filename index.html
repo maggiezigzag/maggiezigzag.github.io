@@ -433,7 +433,7 @@ map.on('load', function() {
 ];
 
 function filterBy(Date) {
-	Year = Date-65
+	Year = Date+65
 	var filters = ['==', 'Date', Year];
 	console.log(filters)
 	map.setFilter('earthquakes', filters);
@@ -441,7 +441,7 @@ function filterBy(Date) {
 	 
 	// Set the label to the month
 	console.log(document.getElementById('1/2/65'))
-	// document.getElementById('Date').textContent = years[Year];
+	document.getElementById('Date').textContent = years[Date];
 }
 
   d3.json('./earthquakes.geojson',
