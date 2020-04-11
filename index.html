@@ -446,10 +446,10 @@ map.on('load', function() {
   	function(err, data){
   		if (err) throw err;
 
-  		data.features = data.features.map(function(d)){
+  		data.features = data.features.map(function(d){
   			d.properties.month = new Date(d.properties.Date).getMonth();
   			return d;
-  		}
+  		});
   	})
 
 });
