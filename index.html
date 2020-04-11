@@ -435,8 +435,8 @@ map.on('load', function() {
 function filterBy(year) {
   		yeari = year+65
 		var filters = ['==', 'Date', year+65];
-		console.log(filters)
 		map.setFilter('earthquakes', filters);
+		console.log(map.setFilter('earthquakes',filters));
 		map.setFilter('earthquake-labels', filters);
 	 
 		// Set the label to the year
