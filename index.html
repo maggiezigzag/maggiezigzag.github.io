@@ -255,66 +255,72 @@ label {
   </div>
   </div>
 
-	<div class="CBD-Legend-item u-tSpace-xl u-clearfix" style='display: block;'>
-		<h2>Magnitude</h2>
-		<div class ="Bubble-container">
-			<ul class="Bubble-list">
-				<li class="Bubble-item">
-					<div class="Bubble-label CDB-Text CDB-Size-small" style="height: 100%">
-						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">9.5</div>
-					</div>
-					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:100%; width:100%; opacity:1; background color:#1f9e89">
-						</span>
-					</div>
-				</li>
-				<li class = "Bubble-item">
-					<div class = "Bubble-label CDB-Text CDB-Size-small" style="height: 79%">
-						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">8.5</div>
-					</div>
-					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:79%; width:79%; opacity:1; background color:#1f9e89"></span>
-					</div>
-				</li>
-				<li class = "Bubble-item">
-					<div class = "Bubble-label CDB-Text CDB-Size-small" style="height: 59%">
-						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">7.5</div>
-					</div>
-					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:59%; width:59%; opacity:1; background color:#1f9e89"></span>
-					</div>
-				</li>
-				<li class = "Bubble-item">
-					<div class = "Bubble-label CDB-Text CDB-Size-small" style="height: 39%">
-						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">6.5</div>
-					</div>
-					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:39%; width:39%; opacity:1; background color:#1f9e89"></span>
-					</div>
-				</li>
-				<li class = "Bubble-item">
-					<div class = "Bubble-label CDB-Text CDB-Size-small" style="height: 19%">
-						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">5.5</div>
-					</div>
-					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:19%; width:19%; opacity:1; background color:#1f9e89"></span>
-					</div>
-				</li>
-			</ul>
-			<p class="Bubble-average CDB-Text CDB-Size-small u-altTextColor" style="bottom: 15%">AVG: 5.88</p>
-		</div>
+<div class="CBD-Legend-item u-tSpace-xl u-clearfix" style='display: block;'>
+	<h2>Magnitude</h2>
+	<div class ="Bubble-container">
+		<ul class="Bubble-list">
+			<li class="Bubble-item">
+				<div class="Bubble-label CDB-Text CDB-Size-small" style="height: 100%">
+					<div class="Bubble-numbersItem CDB-Text CDB-Size-small">9.5</div>
+				</div>
+				<div class = "Bubble-circle">
+					<span class="Bubble-itemCircle" style="height:100%; width:100%; opacity:1; background color:#1f9e89">
+					</span>
+				</div>
+			</li>
+			<li class = "Bubble-item">
+				<div class = "Bubble-label CDB-Text CDB-Size-small" style="height: 79%">
+					<div class="Bubble-numbersItem CDB-Text CDB-Size-small">8.5</div>
+				</div>
+				<div class = "Bubble-circle">
+					<span class="Bubble-itemCircle" style="height:79%; width:79%; opacity:1; background color:#1f9e89"></span>
+				</div>
+			</li>
+			<li class = "Bubble-item">
+				<div class = "Bubble-label CDB-Text CDB-Size-small" style="height: 59%">
+					<div class="Bubble-numbersItem CDB-Text CDB-Size-small">7.5</div>
+				</div>
+				<div class = "Bubble-circle">
+					<span class="Bubble-itemCircle" style="height:59%; width:59%; opacity:1; background color:#1f9e89"></span>
+				</div>
+			</li>
+			<li class = "Bubble-item">
+				<div class = "Bubble-label CDB-Text CDB-Size-small" style="height: 39%">
+					<div class="Bubble-numbersItem CDB-Text CDB-Size-small">6.5</div>
+				</div>
+				<div class = "Bubble-circle">
+					<span class="Bubble-itemCircle" style="height:39%; width:39%; opacity:1; background color:#1f9e89"></span>
+				</div>
+			</li>
+			<li class = "Bubble-item">
+				<div class = "Bubble-label CDB-Text CDB-Size-small" style="height: 19%">
+					<div class="Bubble-numbersItem CDB-Text CDB-Size-small">5.5</div>
+				</div>
+				<div class = "Bubble-circle">
+					<span class="Bubble-itemCircle" style="height:19%; width:19%; opacity:1; background color:#1f9e89"></span>
+				</div>
+			</li>
+		</ul>
+		<p class="Bubble-average CDB-Text CDB-Size-small u-altTextColor" style="bottom: 15%">AVG: 5.88</p>
 	</div>
-<!-- 	<div class="map-overlay">
- -->	<div class="session" id="sliderbar">
-			<h2>Earthquakes by Year</h2>
-			<label id = 'year'>1965</label>
-			<input id = "slider" type="range" min="0" max="51" step="1" value="0">
-		</div>
-<!-- 	</div>
- --><!-- <div class='session' id='sliderbar'>
-  <h2>Date: <label id='Date'>January</label></h2>
-  <input id='slider' class='row' type='range' min='0' max='52' step='1' value='0' />
-</div> -->
+</div>
+ 	<div class="session" id="sliderbar">
+		<h2>Year: <label id = 'year'>1965</label></h2>
+		<input id = "slider" type="range" min="0" max="51" step="1" value="0">
+	</div>
+<div class="session">
+	<h2>Magnitude</h2>
+	<div class="row" id="filters">
+		<input id="5.5-6.4" type="radio" name="toggle" value="5.5-6.4" checked="checked">
+		<label for="5.5-6.4">5.5-6.4</label>
+		<input id="6.5-7.4" type="radio" name="toggle" value="6.5-7.4">
+		<label for="6.5-7.4">6.5-7.4</label>
+		<input id="7.5-8.4" type="radio" name="toggle" value="7.5-8.4">
+		<label for="7.5-8.4">7.5-8.4</label>
+		<input id="8.5-9.5" type="radio" name="toggle" value="8.5-8.5">
+		<label for="8.5-9.5">8.5-9.5</label>
+	</div>
+</div>
 
 </div>
 
@@ -386,13 +392,12 @@ var years = [
 ];
 
 function filterBy(year) {
-  		yeari = year+65
-		var filters = ['==', 'year', year+65];
-		map.setFilter('earthquakes', filters);
-		map.setFilter('earthquake-labels', filters);
-	 
-		// Set the label to the year
-		document.getElementById('year').textContent = years[year];
+	var filters = ['==', 'year', year+65];
+	map.setFilter('earthquakes', filters);
+	map.setFilter('earthquake-labels', filters);
+ 
+	// Set the label to the year
+	document.getElementById('year').textContent = years[year];
 }
 
 map.on('load', function() {
