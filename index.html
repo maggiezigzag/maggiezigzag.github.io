@@ -457,6 +457,14 @@ map.on('load', function() {
   	})
   filterBy(0);
 
+  document
+	.getElementById('slider')
+	.addEventListener('input', function(e) {
+		var month = parseInt(e.target.value, 10);
+		console.log(month)
+		filterBy(month);
+	});
+
 });
 
 </script>
