@@ -58,7 +58,7 @@ label {
 	}
 
 	.colors {
-	  background: linear-gradient(to right, #2dc4b2, #3bb3c3, #669ec4, #8b88b6, #a2719b, #aa5e79);
+	  background: linear-gradient(to right, #f1eef6, #d4b9da, #c994c7, #df65b0, #dd1c77, #980043);
 	  margin-bottom: 5px;
 	}
 
@@ -214,7 +214,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">9.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:100%; width:100%; opacity:1; background color:#5f4690">
+						<span class="Bubble-itemCircle" style="height:100%; width:100%; opacity:1; background color:#980043">
 						</span>
 					</div>
 				</li>
@@ -223,7 +223,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">8.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:79%; width:79%; opacity:1; background color:#5f4690"></span>
+						<span class="Bubble-itemCircle" style="height:79%; width:79%; opacity:1; background color:#980043"></span>
 					</div>
 				</li>
 				<li class = "Bubble-item">
@@ -231,7 +231,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">7.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:59%; width:59%; opacity:1; background color:#5f4690"></span>
+						<span class="Bubble-itemCircle" style="height:59%; width:59%; opacity:1; background color:#980043"></span>
 					</div>
 				</li>
 				<li class = "Bubble-item">
@@ -239,7 +239,7 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">6.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:39%; width:39%; opacity:1; background color:#5f4690"></span>
+						<span class="Bubble-itemCircle" style="height:39%; width:39%; opacity:1; background color:#980043"></span>
 					</div>
 				</li>
 				<li class = "Bubble-item">
@@ -247,17 +247,17 @@ label {
 						<div class="Bubble-numbersItem CDB-Text CDB-Size-small">5.5</div>
 					</div>
 					<div class = "Bubble-circle">
-						<span class="Bubble-itemCircle" style="height:19%; width:19%; opacity:1; background color:#5f4690"></span>
+						<span class="Bubble-itemCircle" style="height:19%; width:19%; opacity:1; background color:#980043"></span>
 					</div>
 				</li>
 			</ul>
 		</div>
 	</div>
 <!-- 	<div class="map-overlay">
- -->		<div class="CBD-Legend-item u-tSpace-xl u-clearfix" style='display: block;'>
+ -->	<div class="session" id="sliderbar">
 			<h2>Earthquakes by Date</h2>
 			<label id = 'month'>January</label>
-			<input id = "slider" type="range" min="0" max="11" step="1" value="0">
+			<input id = "slider" type="range" min="0" max="52" step="1" value="0">
 		</div>
 <!-- 	</div>
  --><!-- <div class='session' id='sliderbar'>
@@ -292,7 +292,47 @@ var months = [
 	'September',
 	'October',
 	'November',
-	'December'
+	'December',
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December',
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December',
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December',
+	'January',
+	'February',
+	'March',
+	'April'
 ];
  
 function filterBy(Date) {
@@ -327,12 +367,12 @@ map.on('load', function() {
         'interpolate',
         ['linear'],
         ['number', ['get', 'Depth']],
-        0, '#2DC4B2',
-        150, '#3BB3C3',
-        300, '#669EC4',
-        450, '#8B88B6',
-        600, '#A2719B',
-        750, '#AA5E79',
+        0, '#f1eef6',
+        150, '#d4b9da',
+        300, '#c994c7',
+        450, '#df65b0',
+        600, '#dd1c77',
+        750, '#980043',
       ],
       'circle-opacity': 0.3
     }
