@@ -511,8 +511,8 @@ map.on('load', function() {
 			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4]]]);
 			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4]]]);
 		} else if (magnitude === '8.5-9.5') {
-			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 9.1]]]);
-			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 9.1]]]);
+			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [8.6, 8.7, 8.8, 9.0, 9.1]]]);
+			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [8.6, 8.7, 8.8, 9.0, 9.1]]]);
 		} 
 		else {
 		console.log('error');
