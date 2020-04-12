@@ -335,7 +335,7 @@ ol, ul {
 		6.5 - 7.4</div>
 		<div class='magnitude-labels'><input id="7.5-8.4" type="radio" name="toggle" value="7.5-8.4">
 		7.5 - 8.4</div>
-		<div class='magnitude-labels'><input id="8.5-9.5" type="radio" name="toggle" value="8.5-8.5">
+		<div class='magnitude-labels'><input id="8.5-9.5" type="radio" name="toggle" value="8.5-9.5">
 		8.5 - 9.5</div>
 	</div>
 </div>
@@ -432,6 +432,9 @@ map.on('load', function() {
 		'type':'geojson',
 		data: data
 	});
+
+	var filterYear = ['==', ['number', ['get', 'year']], 12];
+	var filterMag = ['!=', ['string', ['get', 'magnitude']], 'placeholder'];
 
     map.addLayer({
 	    id: 'earthquakes',
