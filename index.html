@@ -471,11 +471,7 @@ map.on('load', function() {
 		'type': 'symbol',
 		'source': 'earthquakes',
 		'layout': {
-		'text-field': [
-		'concat',
-		['to-string', ['get', 'Magnitude']],
-		'm'
-		],
+		'text-field': ['concat',['to-string', ['get', 'Magnitude']],'ml, ', ['to-string', ['get', 'Depth']], 'm'],
 		'text-font': [
 		'Open Sans Bold',
 		'Arial Unicode MS Bold'
