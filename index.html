@@ -418,10 +418,6 @@ function filterBy(year) {
 	document.getElementById('year').textContent = years[year];
 }
 
-function filterByM(magnitude){
-	var filters = ['==','magnitude', [5.5, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4]]
-}
-
 map.on('load', function() {
 
 	d3.json('./earthquakes.geojson',
@@ -429,7 +425,6 @@ map.on('load', function() {
 			if (err) throw err;
 			data.features = data.features.map(function(d){
 				d.properties.year = new Date(d.properties.Date).getYear();
-				// console.log(d.properties.Magnitude)
 				d.properties.magnitude = d.properties.Magnitude
 				return d;
 			});
@@ -518,7 +513,7 @@ map.on('load', function() {
 		else {
 		console.log('error');
 		}
-		map.setFilter('magnitude', ['All', filterMag]);
+		map.setFilter('earthquakes', ['All', filterMag]);
 	});
 	
 	}
