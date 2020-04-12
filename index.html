@@ -270,7 +270,7 @@ ol, ul {
   </div>
 
 <div class="CBD-Legend-item u-tSpace-xl u-clearfix" style='display: block;'>
-	<h2>Magnitude</h2>
+	<h2>Magnitude (ml)</h2>
 	<div class ="Bubble-container">
 		<ul class="Bubble-list">
 			<li class="Bubble-item">
@@ -329,14 +329,14 @@ ol, ul {
 	<div class="row" id="filters">
 		<div class='magnitude-labels'><input id="All" type="radio" name="toggle" value="All" checked="checked">
 		All</div>
-		<div class='magnitude-labels'><input id="5.5-6.4" type="radio" name="toggle" value="5.5-6.4">
-		5.5 - 6.4</div>
-		<div class='magnitude-labels'><input id="6.5-7.4" type="radio" name="toggle" value="6.5-7.4">
-		6.5 - 7.4</div>
-		<div class='magnitude-labels'><input id="7.5-8.4" type="radio" name="toggle" value="7.5-8.4">
-		7.5 - 8.4</div>
-		<div class='magnitude-labels'><input id="8.5-9.5" type="radio" name="toggle" value="8.5-9.5">
-		8.5 - 9.5</div>
+		<div class='magnitude-labels'><input id="5.5-6.0" type="radio" name="toggle" value="5.5-6.0">
+		5.5 - 6.0</div>
+		<div class='magnitude-labels'><input id="6.1-7.0" type="radio" name="toggle" value="6.1-7.0">
+		6.1 - 7.0</div>
+		<div class='magnitude-labels'><input id="7.1-8.0" type="radio" name="toggle" value="7.1-8.0">
+		7.1 - 8.0</div>
+		<div class='magnitude-labels'><input id="8.1 and above" type="radio" name="toggle" value="8.1 and above">
+		8.1 and above</div>
 	</div>
 </div>
 
@@ -500,18 +500,18 @@ map.on('load', function() {
 		if (magnitude === 'All') {
 			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [5.5, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 9.1, 9.2, 9.3, 9.4]]]);
 			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [5.5, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 9.1, 9.2, 9.3, 9.4]]]);
-		} else if (magnitude === '5.5-6.4') {
-			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [5.5, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4]]]);
-			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [5.5, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4]]]);
-		} else if (magnitude === '6.5-7.4') {
-			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4]]]);
-			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [6.5, 6.6, 6.7, 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4]]]);
-		} else if (magnitude === '7.5-8.4') {
-			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4]]]);
-			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4]]]);
-		} else if (magnitude === '8.5-9.5') {
-			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [8.6, 8.7, 8.8, 9.1]]]);
-			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [8.6, 8.7, 8.8, 9.1]]]);
+		} else if (magnitude === '5.5-6.0') {
+			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [5.5, 5.7, 5.8, 5.9, 6.0]]]);
+			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [5.5, 5.7, 5.8, 5.9, 6.0]]]);
+		} else if (magnitude === '6.1-7.0') {
+			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 6.8, 6.9, 7.0]]]);
+			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [6.5, 6.6, 6.7, 6.8, 6.9, 7.0]]]);
+		} else if (magnitude === '7.1-8.0') {
+			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0]]]);
+			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0]]]);
+		} else if (magnitude === '8.1 and above') {
+			map.setFilter('earthquakes', ['in', ['get', 'magnitude'], ['literal', [8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 9.1]]]);
+			map.setFilter('earthquake-labels', ['in', ['get', 'magnitude'], ['literal', [8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 9.1]]]);
 		} 
 		else {
 		console.log('error');
