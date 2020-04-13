@@ -435,6 +435,15 @@ function filterBy(year) {
 
 map.on('style.load', function() {
 
+	map.addSource('plates',{
+		'type':'geojson',
+		data: './plates.geojson'
+	})
+	map.addSource('volcano',{
+		'type':'geojson',
+		data: './volcano.geojson'
+	})
+
 	d3.json('./earthquakes.geojson',
 		function(err, data){
 			if (err) throw err;
@@ -447,15 +456,6 @@ map.on('style.load', function() {
 		'type':'geojson',
 		data: data
 	});
-	
-	map.addSource('plates',{
-		'type':'geojson',
-		data: './plates.geojson'
-	})
-	map.addSource('volcano',{
-		'type':'geojson',
-		data: './volcano.geojson'
-	})
 
 	map.addLayer({
         id: 'plates',
