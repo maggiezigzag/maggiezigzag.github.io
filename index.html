@@ -449,11 +449,11 @@ map.on('load', function() {
 	});
 	map.addSource('plates',{
 		'type':'geojson',
-		data: plates
+		data: './plates.geojson'
 	})
 	map.addSource('volcano',{
 		'type':'geojson',
-		data: volcano
+		data: './volcano.geojson'
 	})
 
 	map.addLayer({
