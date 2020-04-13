@@ -460,31 +460,31 @@ map.on('style.load', function() {
         type: "symbol",
         // interactive: true,
         source: "volcano",
-        // properties:{
-        // 	'marker-color': '#3bb2d0',
-      		// 'marker-size': 'large',
-      		// 'marker-symbol': 'rocket'
-        // }
-        layout: {
-            'icon-image': "volcano-15",
-            'icon-padding': 2,
-            'icon-size': {
-                base: 1,
-                stops: [
-                    [8, 0.7],
-                    [16, 2]
-                    ]
-            }
-        },
-        paint:{
-          "icon-opacity": {
-              "base": 1,
-              "stops": [
-                  [1, 0.85],
-                  [8, 1]
-                  ]
-          }
+        properties:{
+        	'marker-color': '#3bb2d0',
+      		'marker-size': 'large',
+      		'marker-symbol': 'volcano'
         }
+        // layout: {
+        //     'icon-image': "volcano-15",
+        //     'icon-padding': 2,
+        //     'icon-size': {
+        //         base: 1,
+        //         stops: [
+        //             [8, 0.7],
+        //             [16, 2]
+        //             ]
+        //     }
+        // },
+        // paint:{
+        //   "icon-opacity": {
+        //       "base": 1,
+        //       "stops": [
+        //           [1, 0.85],
+        //           [8, 1]
+        //           ]
+        //   }
+        // }
     });
 
 	d3.json('./earthquakes.geojson',
