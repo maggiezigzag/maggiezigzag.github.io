@@ -444,19 +444,6 @@ map.on('style.load', function() {
 		data: './volcano.geojson'
 	})
 
-	d3.json('./earthquakes.geojson',
-		function(err, data){
-			if (err) throw err;
-			data.features = data.features.map(function(d){
-				d.properties.year = new Date(d.properties.Date).getYear();
-				d.properties.magnitude = d.properties.Magnitude
-				return d;
-			});
-	map.addSource('earthquakes',{
-		'type':'geojson',
-		data: data
-	});
-
 	map.addLayer({
         id: 'plates',
         type: 'line',
@@ -494,6 +481,19 @@ map.on('style.load', function() {
           }
         }
     });
+
+	d3.json('./earthquakes.geojson',
+		function(err, data){
+			if (err) throw err;
+			data.features = data.features.map(function(d){
+				d.properties.year = new Date(d.properties.Date).getYear();
+				d.properties.magnitude = d.properties.Magnitude
+				return d;
+			});
+	map.addSource('earthquakes',{
+		'type':'geojson',
+		data: data
+	});
 
     map.addLayer({
 	    id: 'earthquakes',
