@@ -433,7 +433,7 @@ function filterBy(year) {
 	document.getElementById('year').textContent = years[year];
 }
 
-map.on('load', function() {
+map.on('style.load', function() {
 
 	d3.json('./earthquakes.geojson',
 		function(err, data){
@@ -447,6 +447,7 @@ map.on('load', function() {
 		'type':'geojson',
 		data: data
 	});
+	
 	map.addSource('plates',{
 		'type':'geojson',
 		data: './plates.geojson'
