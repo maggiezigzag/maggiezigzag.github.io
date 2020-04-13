@@ -447,9 +447,52 @@ map.on('load', function() {
 		'type':'geojson',
 		data: data
 	});
+	map.addSource('plates',{
+		'type':'geojson',
+		data: plates
+	})
+	map.addSource('volcano',{
+		'type':'geojson',
+		data: volcano
+	})
 
-	var filterYear = ['==', ['number', ['get', 'year']], 12];
-	var filterMag = ['!=', ['string', ['get', 'magnitude']], 'placeholder'];
+	map.addLayer({
+        'id': 'plates',
+        'type': 'line',
+        'source': 'plates',
+        'layout': {},
+        'paint': {
+            "line-color": "#000",
+            "line-dasharray": [4,2]
+        }
+    });
+
+    map.addLayer({
+        "id": "volcano",
+        "type": "symbol",
+        "interactive": true,
+        "source": "volcano",
+        "layout": {
+            "icon-image": "{marker-symbol}",
+            "icon-padding": -16,
+            "icon-size": {
+                "base": 1,
+                "stops": [
+                    [8, 0.7],
+                    [16, 2]
+                    ]
+            }
+        },
+        "paint":{
+          "icon-opacity": {
+              "base": 1,
+              "stops": [
+                  [1, 0.85],
+                  [8, 1]
+                  ]
+          }
+        }
+    });
 
     map.addLayer({
 	    id: 'earthquakes',
@@ -565,7 +608,8 @@ map.on('load', function() {
 });
 
 </script>
-
+<script src='./volcano.geojson'></script>
+<script src='./plates.geojson'></script>
 </body>
 
 
