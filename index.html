@@ -457,33 +457,33 @@ map.on('load', function() {
 	})
 
 	map.addLayer({
-        'id': 'plates',
-        'type': 'line',
-        'source': 'plates',
-        'layout': {},
-        'paint': {
-            "line-color": "#000",
-            "line-dasharray": [4,2]
+        id: 'plates',
+        type: 'line',
+        source: 'plates',
+        layout: {},
+        paint: {
+            line-color: "#000",
+            line-dasharray: [4,2]
         }
     });
 
     map.addLayer({
-        "id": "volcano",
-        "type": "symbol",
-        "interactive": true,
-        "source": "volcano",
-        "layout": {
-            "icon-image": "{marker-symbol}",
-            "icon-padding": 2,
-            "icon-size": {
-                "base": 1,
-                "stops": [
+        id: "volcano",
+        type: "symbol",
+        // interactive: true,
+        source: "volcano",
+        layout: {
+            icon-image: "{marker-symbol}",
+            icon-padding: 2,
+            icon-size: {
+                base: 1,
+                stops: [
                     [8, 0.7],
                     [16, 2]
                     ]
             }
         },
-        "paint":{
+        paint:{
           "icon-opacity": {
               "base": 1,
               "stops": [
